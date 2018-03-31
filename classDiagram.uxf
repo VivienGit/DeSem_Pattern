@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>160</y>
+      <w>320</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>Button
+--
+- state : BUTTONSTATE
+--
++ Button()
+- checkButton() : BUTTONSTATE
++ press() : void
++ setCallbackPressed(callbackPressed p) : void
++ setCallbackReleased(callbackPressed p) : void
+--
+press() is there to simulate a physical 
+button. It's used to changed the state
+of the button and to call the callback
+methods when it's pressed and released</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>410</x>
+      <y>160</y>
+      <w>240</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>ButtonController
+--
+--
++ ButtonController
++ initializeRelations(Button* b) : void
+- onButtonPressed(Button* b) : void
+- onButtonReleased(Button* b) : void
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>380</y>
+      <w>260</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>BUTTONSTATE      &lt;&lt;enum&gt;&gt;
+--
++ PRESSED : int = 1
++ RELEASED : int = 0
+--
+--
+Everything is public in an enum</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>110</x>
+      <y>300</y>
+      <w>30</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>440</x>
+      <y>280</y>
+      <w>260</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>callbackPressed    &lt;&lt;typedef function&gt;&gt;
+--
++ callbackPressed(Button* b) : void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>440</x>
+      <y>350</y>
+      <w>260</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>callbackReleased    &lt;&lt;typedef function&gt;&gt;
+--
++ callbackPressed(Button* b) : void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>310</x>
+      <y>170</y>
+      <w>120</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;bind&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;100.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>360</x>
+      <y>230</y>
+      <w>100</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>80.0;70.0;10.0;70.0;10.0;10.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>360</x>
+      <y>290</y>
+      <w>100</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>80.0;90.0;10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>
